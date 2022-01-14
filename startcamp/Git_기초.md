@@ -140,3 +140,62 @@ $ rm -rf .git 			(.git  폴더 삭제 후 master가 터미널에서 사라졌는
   - `-p`: 파일의 변경 내용도 같이 보여줍니다.
   - `-2`: 원하는 개수 만큼의 커밋 내역을 보여줍니다.
     - 2말고 다른 숫자도 가능
+
+
+
+
+
+# 원격 저장소
+
+## Git remote
+
+- 로컬 저장소에 원격 저장소를 `등록, 조회, 삭제`할 수 있는 명령어
+
+  1. 원격 저장소 등록
+
+     `git remote add <이름> <주소>` 형식으로 작성합니다.
+
+     ```
+     $ git remote add origin 깃헙_저장소_주소
+     
+     [풀이]
+     git 명령어를 작성할건데, remote(원격 저장소)에 add(추가)한다.
+     origin이라는 이름으로 나의 "깃헙_저장소_주소"라는 원격 저장소를
+     ```
+
+  2. 원격 저장소 조회
+
+     `git remote -v`로 작성합니다.
+
+     ```
+     $ gir remote -v
+     
+     origin htps://github.com/내_깃헙_닉네임/TIL.git (fetch)
+     origin htps://github.com/내_깃헙_닉네임/TIL.git (push)
+     ```
+
+  3. 원격 저장소 연결 삭제
+
+     ```
+     $ git remote rm origin
+     
+     [풀이]
+     git 명령어를 작성할건데, remote(원격 저장소)와의 연결을 rm(삭제)한다.
+     ```
+
+
+
+### git push
+
+- 로컬 저장소의 커밋을 원격 저장소에 업로드하는 명령어
+
+- `git push <저장소 이름> <브랜치 이름>` 형식으로 작성합니다
+
+  ```
+  $ git push origin master
+  
+  [풀이]
+  git 명령어를 작성할건데, origin이라는 이름의 원격 저장소에 master 브랜치의 commit들을 push(올린다)한다.
+  ```
+
+- 
