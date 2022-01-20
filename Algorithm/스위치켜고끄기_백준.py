@@ -1,13 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[33]:
-
-
 switch_len = int(input())
 switch_list = list(map(int, input().split()))
-student_num = int(input())
 student_info = []
+student_num = int(input()) # 테스트 케이스의 개수
 
 for _ in range(student_num):
     student_info.append(list(map(int, input().split())))
@@ -38,4 +32,3 @@ for i in range(student_num):
 
 ans = ' '.join(map(str, switch_list))
 print(ans)
-
