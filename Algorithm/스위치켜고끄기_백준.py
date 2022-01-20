@@ -16,7 +16,7 @@ def girls(num):
         switch_list[num-1] =  int(not switch_list[num-1])
     else:
         for i in range(int(switch_len/2)):
-            if (num - 1 - i) >= 0:
+            if (num - 1 - i) >= 0 and (num - 1 + i) <= (switch_len - 1):
                 if switch_list[num - 1 - i] == switch_list[num - 1 + i]:
                     switch_list[num - 1 + i], switch_list[num - 1 - i] = int(not switch_list[num - 1 + i]),  int(not switch_list[num - 1 - i])
                 else:
@@ -29,6 +29,24 @@ for i in range(student_num):
     else:
         girls(student_info[i][1])
 
+if switch_len <= 20:
+    print(' '.join(map(str, switch_list)))
 
-ans = ' '.join(map(str, switch_list))
-print(ans)
+elif 40 >= switch_len > 20:
+    print(' '.join(map(str, switch_list[:20])))
+    print(' '.join(map(str, switch_list[20:])))
+elif 40 < switch_len <= 60:
+    print(' '.join(map(str, switch_list[:20])))
+    print(' '.join(map(str, switch_list[20:40])))
+    print(' '.join(map(str, switch_list[40:])))
+elif 60 < switch_len <= 80:
+    print(' '.join(map(str, switch_list[:20])))
+    print(' '.join(map(str, switch_list[20:40])))
+    print(' '.join(map(str, switch_list[40:60])))
+    print(' '.join(map(str, switch_list[60:])))
+else:
+    print(' '.join(map(str, switch_list[:20])))
+    print(' '.join(map(str, switch_list[20:40])))
+    print(' '.join(map(str, switch_list[40:60])))
+    print(' '.join(map(str, switch_list[60:80])))
+    print(' '.join(map(str, switch_list[80:])))
