@@ -29,24 +29,9 @@ for i in range(student_num):
     else:
         girls(student_info[i][1])
 
-if switch_len <= 20:
-    print(' '.join(map(str, switch_list)))
 
-elif 40 >= switch_len > 20:
-    print(' '.join(map(str, switch_list[:20])))
-    print(' '.join(map(str, switch_list[20:])))
-elif 40 < switch_len <= 60:
-    print(' '.join(map(str, switch_list[:20])))
-    print(' '.join(map(str, switch_list[20:40])))
-    print(' '.join(map(str, switch_list[40:])))
-elif 60 < switch_len <= 80:
-    print(' '.join(map(str, switch_list[:20])))
-    print(' '.join(map(str, switch_list[20:40])))
-    print(' '.join(map(str, switch_list[40:60])))
-    print(' '.join(map(str, switch_list[60:])))
-else:
-    print(' '.join(map(str, switch_list[:20])))
-    print(' '.join(map(str, switch_list[20:40])))
-    print(' '.join(map(str, switch_list[40:60])))
-    print(' '.join(map(str, switch_list[60:80])))
-    print(' '.join(map(str, switch_list[80:])))
+for i in range(switch_len):
+    if i in [19, 39, 59, 79]:
+        print(switch_list[i])
+    else:
+        print(switch_list[i], end= ' ')
