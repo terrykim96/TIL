@@ -1,4 +1,6 @@
-a = 2
-b = 3
+flies = []
 
-print(f"'minimun' : {a} \n 'maximum' : {b} ")
+for _ in range(5):
+    flies.append(list(map(int, input().split())))
+
+print(flies[0:1][0:3])
