@@ -3,7 +3,7 @@ T = int(input())
 for i in range(1, T+1):
     matrix_a = []
     matrix_size = int(input())
-    matrix_ans = ''
+    
     for j in range(matrix_size):
         matrix_a.append(list(map(int, input().split())))
     

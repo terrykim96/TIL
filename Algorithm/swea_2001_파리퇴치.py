@@ -13,6 +13,7 @@ for i in range(1, T+1):
             catch = []
             for l in range(M):
                 catch.append(flies[j + l][k : k + M])
+            print(catch)
             if died_flies <= sum(sum(catch, [])):
                 died_flies = sum(sum(catch, []))
     print(f'#{i} {died_flies}')
