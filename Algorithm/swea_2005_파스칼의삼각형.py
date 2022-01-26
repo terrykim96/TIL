@@ -22,4 +22,4 @@ for i in range(1, T + 1):
                 pascal_tmp.append(pascal[j][num-1] + pascal[j][num])
             pascal_tmp.append(1)
             pascal.append(pascal_tmp)
-            print(' '.join(map(str, pascal_tmp)))
+            print(*pascal_tmp)
