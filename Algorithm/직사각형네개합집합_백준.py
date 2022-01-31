@@ -13,4 +13,5 @@ for i in range(len(area)):              # 표시가 끝나면 칠해진 전체 �
     for j in range(len(area)):
         if area[i][j] > 0:
             width += 1
+            
 print(width)

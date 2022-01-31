@@ -15,5 +15,6 @@ for i in range(num // 2, num + 1):  #  첫 숫자는 주어진 숫자의 절반�
         if list_len < len(num_list):    # 리스트 길이가 전 for문의 list 길이보다 크면 덮어쓰기
             list_len = len(num_list)
             max_list = num_list[:]
+
 print(list_len)
-print(*max_list)
+print(*max_list)    # *로 리스트 요소들 출력
