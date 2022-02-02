@@ -1,7 +1,7 @@
 m, n = map(int, input().split())    # 가로와 세로 길이를 입력받는다.
 cut = int(input())                  # 자르는 횟수를 입력받는다.
 
-row1 =[0, n]                        # 가로, 세로로 자를 행동을 저장할 리스트를 생성한다
+row1 =[0, n]                        # 가로, 세로로 자를 행동을 저장할 리스트를 생성한다.
 column1 = [0, m]                    # 이 때, 잘린 넓이를 계산하기 위해 0과 끝 길이를 넣어준다.
 
 for i in range(cut):                # 자르는 횟수만큼 가로, 세로로 자르는 행동을 입력 받아 각 리스트에 저장한다.
@@ -10,6 +10,7 @@ for i in range(cut):                # 자르는 횟수만큼 가로, 세로로 �
         row1.append(tmp2)
     else:
         column1.append(tmp2)
+
 row1.sort()                         # 행동 리스트를 오름차순으로 정렬한다.
 column1.sort()
 
