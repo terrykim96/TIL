@@ -8,12 +8,52 @@
 </head>
 <body>
   <header>
-    <a href="">
+    <a href="#">
       <img src="#" alt="SSAFY 로고 이미지">
     </a>
     <h1>SSAFY 학생 건강설문</h1>
   </header>
-  <section></section>
-  <footer></footer>
+  <section>
+    <form action="">
+      <!-- 이름 -->
+      <div>
+        <label for="name">이름을 기재해주세요.</label>
+        <br>
+        <input placeholder="이름을 기재해주세요." type="text" id="name" name="name" autofocus>
+      </div>
+      <hr>
+
+      <!-- 지역 -->
+      <div>
+        <label for="region">지역을 선택해주세요.</label>
+        <br>
+        <select name="region" id="region">
+          <option value="서울">서울</option>
+          <option value="대전">대전</option>
+          <option value="구미">구미</option>
+          <option value="광주">광주</option>
+          <option value="부울경">부울경</option>
+          <option value="제주도" disabled>제주도</option>
+        </select>
+      </div>
+      <hr>
+
+      <!-- 체온-->
+      <div>
+        <p>오늘의 체온을 선택해주세요.</p>
+        <input type="radio" id="normal" name="body-heat" checked>
+        <label for="normal">37도 미만</label>
+        <br>
+        <input type="radio" id="sick" name="body-heat">
+        <label for="sick">37도 이상</label>
+      </div>
+      <hr>
+
+      <button>제출</button>
+    </form>
+  </section>
+  <footer>
+    Google 설문지를 통해 비밀번호를 제출하지 마시오.
+  </footer>
   </body>
 </html>

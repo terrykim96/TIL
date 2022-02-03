@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 전체 선택자 */
+    * {
+      color: green;
+    }
+    /* 요소 선택자 */
+    
+    h1 {
+      color: skyblue;
+    }
+
+    h2 {
+      color: red;
+    }
+    /* 클래스 선택자 */
+    /* 재활용 가능! */
+    .green {
+      color: green;
+    }
+
+    /* 아이디 선택자 */
+    /* 
+      아이디는 문서에서 한 번만 등장해야 합니다.
+      (tip. javascript를 위해 아껴둡니다.) 
+    */
+    #violet {
+      color: violet;
+    }
+
+    /* 자식 결합자 */
+    .box > p {
+      font-size: 50px;
+    }
+    /* 자손 결합자 */
+    .box p {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="green">SSAFY</h1>
+  <h2 class="green">선택자 연습</h2>
+  <div class="box">
+    box contents
+    <div>
+      <p>지역 목록</p>
+      <ul>
+        <li id="violet">서울</li>
+        <li>대전</li>
+        <li>구미</li>
+      </ul>
+    </div>
+    <p>부울경 & 광주 미안해</p>
+  </div>
+</body>
+</html>

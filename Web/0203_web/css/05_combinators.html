@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* p 요소의 형제 요소들 중에
+      p 요소 '바로' 뒤에 위치하는 span 태그를 선택
+    */
+    p + span {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <!-- 인접 형제 결합자 -->
+  <span>1</span>
+  <p>2</p>
+  <span>3</span>
+  <span>4</span>
+  <strong>5</strong>
+  <span>6</span>
+</body>
+</html>

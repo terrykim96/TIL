@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: salmon;
+      border: 1px solid black;
+    }
+
+    .none {
+      display: none;
+    }
+
+    .hidden {
+      visibility: none;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>나는 block입니다.</h1>
+  <div>block</div>
+  <p>
+    나는
+    <span>인라인</span>
+    속성입니다.
+  </p>
+  <hr>
+
+  <!-- none vs. visibility -->
+  <div class="box none">박스1</div>
+  <div class="box hidden">박스2</div>
+</body>
+</html>

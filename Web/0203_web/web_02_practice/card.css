@@ -1,0 +1,22 @@
+/* 초기화 작업 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1200px;
+  margin: 200px auto;
+}
+
+.card {
+  width: 700px;
+  height: 700px;
+}
+
+.card-nav {
+  width: 700px;
+  background-color: lightgreen;
+}
