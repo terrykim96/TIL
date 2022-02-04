@@ -1,7 +1,57 @@
 /* 제목 */
-
+.title {
+  text-align: center;
+}
 
 /* 버튼 스타일링 및 위치 */
+.compare-button {
+  /* 너비와 높이를 지정하기 위해 inline -> block */
+  display: block;
+  width: 100px;
+  height: 100px;
+  /* 색상 */
+  background-color: black;
+  color: white;
+  /* 가운데정렬, 수직정렬 */
+  text-align: center;
+  line-height: 100px;
+  /* a tag 기본 속성 제거 */
+  text-decoration: none;
+  /* 원형으로 깎기 */
+  border-radius: 50%;
+}
 
+/* 위치 지정 */
+.compare {
+  position: relative;
+  top: 0;
+}
+.compare-image {
+  width: 100%;
+}
+
+.compare-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
 
 /* top 버튼 */
+/* 스타일링 */
+.top-button {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* 위치 */
+.top-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+}
