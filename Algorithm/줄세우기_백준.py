@@ -6,5 +6,4 @@ ans = []
 for i in range(N):
     ans.insert(i - student_num[i], i + 1)
 
-for j in ans:
-    print(j, end= ' ')
+print(*ans)

@@ -1,15 +1,15 @@
 from collections import defaultdict
 
-number_of_round = int(input())
-for round_num in range(number_of_round):
+round = int(input())
+for round_num in range(round):
     A = list(map(int,input().split()))
     B = list(map(int,input().split()))
-    #딱지의 개수 부분 제거
-    A.pop(0)
+    
+    A.pop(0)    #딱지의 개수 부분 제거
     B.pop(0)
-    #각 모양의 갯수를 판단하기 위한 딕셔너리 생성
-    A_dic, B_dic = defaultdict(int), defaultdict(int)
-    for num in A:
+
+    A_dic, B_dic = defaultdict(int), defaultdict(int)   # 각 모양의 갯수를 판단하기 위한 딕셔너리 생성
+    for num in A:         # 이 때 value값을 +=으로 하나씩 늘려주기 위해 defaultdict를 사용해서 key가 없다면 기본값을 지정
         A_dic[num] += 1
     for num in B:
         B_dic[num] += 1
