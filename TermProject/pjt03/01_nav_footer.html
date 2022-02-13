@@ -13,17 +13,20 @@
 </head>
 <body>
   <!-- 01_nav_footer.html -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <!-- navbar-expand-md와 container fluid로 일정 사이즈 이하일 때 메뉴바 나오게 설정한다. -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"> 
     <div class="container-fluid">
       <a class="navbar-brand" href="02_home.html">
         <img src="images/logo.png" class="img-fluid" width="150px" alt="logo-image">
       </a>
+      <!-- collapse와 nav-item으로 메뉴바 내에 item들을 넣어준다. aria-expanded가 True, False로 바뀌면서 메뉴바가 확장, 축소된다. -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text-end bg-dark" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
+            <!-- nav-link로 메뉴바와 연결하고 active로 강조한다. -->
             <a class="nav-link active p-2" aria-current="page" href="02_home.html">Home</a>
           </li>
           <li class="nav-item">
@@ -36,11 +39,13 @@
       </div>
     </div>
   </nav>
+  <!-- 모달로 Login 창 생성  -->
   <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginlLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="LoginLabel">Login</h5>
+          <!-- x버튼 -->
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
