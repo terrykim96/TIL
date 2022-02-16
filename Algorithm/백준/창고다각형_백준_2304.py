@@ -1,17 +1,28 @@
 N = int(input())
 dic = {}
 loc = []
+bld = []
 area = 0
-height = 0
+
 for _ in range(N):
     L, H = map(int, input().split())
     dic[L] = H
     loc.append(L)
-loc.sort()
+    bld.append(H)
 
-tmp = loc[0]
-for i in range(1, N):
-    if height < dic[loc[i - 1]]:
-        height = dic[loc[i - 1]]
-        area += height * (loc[i] - tmp)
-        tmp = loc[i]
+high = loc[bld.index(max(bld))]
+height = 0
+for i in range(high + 1):
+    if dic.get(i):
+        if height < dic.get(i):
+            height = dic.get(i)
+    area += height
+
+height = 0
+for i in range(max(loc), high, -1):
+    if dic.get(i):
+        if height < dic.get(i):
+            height = dic.get(i)
+    area += height
+
+print(area)

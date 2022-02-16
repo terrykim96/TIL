@@ -42,4 +42,4 @@ for test_case in range(1, T + 1):
         x += dx[d]
         y += dy[d]
 
-    print('#{test_case}' , y-1)
+    print(f'#{test_case}' , y-1)
