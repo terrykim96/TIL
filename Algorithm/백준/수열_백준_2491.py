@@ -1,30 +1,27 @@
 N = int(input())
 numbers = list(map(int, input().split()))
-ans_1 = 0
-ans_2 = 0
+ans = 1
+cnt1 = 1
+cnt2 = 1
 
-for i in range(N):
-    cnt = 1
-    num = numbers[i]
-    for j in range(i + 1, N):
-        if num <= numbers[j]:
-            cnt += 1
-            num = numbers[j]
-        else:
-            break
-    if ans_1 < cnt:
-        ans_1 = cnt
+# 다음 숫자와 비교해서 커지거나 같으면 cnt1에 1을 더하고 가장 큰 cnt1를 ans에 저장
+for i in range(N - 1):
+    if numbers[i] <= numbers[i + 1]:
+        cnt1 += 1
+    else:
+        cnt1 = 1
 
-for i in range(N):
-    cnt = 1
-    num = numbers[i]
-    for j in range(i + 1, N):
-        if num >= numbers[j]:
-            cnt += 1
-            num = numbers[j]
-        else:
-            break
-    if ans_2 < cnt:
-        ans_2 = cnt
-        
-print(max(ans_1, ans_2))
+    if ans < cnt1:
+        ans = cnt1
+
+# 다음 숫자와 비교해서 작아지거나 같으면 cnt2에 1을 더하고 가장 큰 cnt2를 ans와 비교해서 더 크면 저장
+for i in range(N - 1):
+    if numbers[i] >= numbers[i + 1]:
+        cnt2 += 1
+    else:
+        cnt2 = 1   
+
+    if ans < cnt2:
+        ans = cnt2
+
+print(ans)
