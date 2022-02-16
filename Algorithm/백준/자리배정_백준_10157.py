@@ -20,7 +20,7 @@ while(True):
             continue
         maps[nx][ny]=cnt
         if (cnt == k):
-            return nx + 1, ny + 1
+            print(nx + 1, ny + 1)
         stack.append((nx,ny))
         cnt+=1
 
