@@ -19,3 +19,5 @@ for test_case in range(1, T + 1):
     
     for num in new_lst:
         print(num_str[num], end=' ')
+    
+    print()
