@@ -24,3 +24,4 @@ for i in range(1, T + 1):
             pascal.append(pascal_tmp)
             
             print(*pascal_tmp)
+        
