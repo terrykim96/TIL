@@ -16,7 +16,7 @@ for test_case in range(1, T + 1):
     while stk:
         for i in range(1, V+1):
             if not visited[i] and adj[s][i]:
-                stk.append(i)
+                stk.append(s)
                 visited[i] = 1
                 ans.append(i)
                 s = i
