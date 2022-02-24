@@ -8,13 +8,16 @@ for test_case in range(1, T + 1):
     direct = [(1, 0), (-1, 0), (0, 1), (0, -1)]
     
     ans = 0
+    x = y = 0
 
     for i in range(N):
         for j in range(N):
             if maze[i][j] == 3:
                 x = j
                 y = i
-            break
+                break
+            else:
+                continue
         
     stk = [(y, x)]
     while stk:
