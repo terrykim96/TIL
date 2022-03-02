@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/articles/catch/" method="GET">
+  {% comment %} 
+  
+  1) /catch/ => 루트 경로부터
+  2) catch/  => 현재 경로부터
+
+  현재 위치
+  http://127.0.0.1:8000/articles/
+
+  1번 => http://127.0.0.1:8000/catch/
+  2번 => http://127.0.0.1:8000/articles/catch/
+
+  {% endcomment %}
+
+  <label for="message">메세지:</label>
+  <input type="text" name="message" id='message'>
+  <button>던지기!</button>
+</form>
+{% endblock %}
