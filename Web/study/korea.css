@@ -1,0 +1,13 @@
+.ul_style {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.a_style {
+  content: '|';
+  float:'right';
+  color: white;
+  text-decoration: none;
+  padding-right: 2rem;
+}
