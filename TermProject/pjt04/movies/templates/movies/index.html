@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card bg-dark text-white">
+  <img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/4zlq/image/w19-uVi6EZLNlgTdsX8FW9PcTFM.png" class="card-img" alt="movie_recommend">
+  <div class="card-img-overlay">
+    <p class="card-text text-dark text-center fs-1">당신에게 어울리는 영화를 추천해 드립니다.</p>
+  </div>
+</div>
+
+
+<h1 class="text-center m-4">영화 목록</h1>
+
+<div class="container">
+  <section class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 gy-2">
+    <div class="col">
+      <article class="card"><img style="height:300px" src="https://upload.wikimedia.org/wikipedia/ko/3/32/%EC%87%BC%EC%83%9D%ED%81%AC%ED%83%88%EC%B6%9C_%EC%9E%AC%EA%B0%9C%EB%B4%89_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg" alt="movie1" class="card-img-top" data-bs-toggle="modal" data-bs-target="#movie1">
+        <div class="card-body">
+          <h5 class="card-title">쇼생크탈출</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="movie1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movie1Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://w.namu.la/s/5a9be7d32d0b57d897e4b4d90a97dbad7a4cfeb5eb1e88929cd60729353069d9ab63ab1d235e364292300813a8816e42eae05413e0477d91c806771a3351c55ee4483a45767125049040dd4531b3cf7eae30e0505dd6acc82e90a82f134bb3a0" class="d-block w-100" alt="쇼생크1">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://menu.mt.co.kr/theleader/thumb/2019/11/06/2019111614237890972_1.jpg" class="d-block w-100" alt="쇼생크2">
+                </div>
+                <div class="carousel-item">
+                  <img src="http://image.yes24.com/blogimage/blog/d/d/ddedon4u/20120207130225654532.jpg" class="d-block w-100" alt="쇼생크3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <article class="card "><img style="height:300px" src="https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/kS8/image/LDyGhuY09xMlB2leJ2SZUgZbFBo.jpg" alt="movie2" class="card-img-top" data-bs-toggle="modal" data-bs-target="#movie2">
+        <div class="card-body">
+          <h5 class="card-title">죽은 시인의 사회</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="modal fade" id="movie2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movie2Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://i.ytimg.com/vi/VATk8eTWC5M/maxresdefault.jpg" class="d-block w-100" alt="죽은1">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://file.mk.co.kr/mkde/N0/2021/03/20210319_4802995_1616116381.jpg" class="d-block w-100" alt="죽은2">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://cdn.topstarnews.net/news/photo/201805/411605_58201_4849.jpg" class="d-block w-100" alt="죽은3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <article class="card"><img style="height:300px" src="https://w.namu.la/s/96307822f5e1f7479a0ca52f82ebc35c36343da6a0162d7dc06edd2b9e072ec1f2901cf36d0ad564c691cba7d2e5f37b77aa2c94381b42cc064cf643b58cf64c421bff437d7d3f46bf2b869533c2a14700f7fc15f16518c8e96dfe20688bc257" alt="movie3" class="card-img-top" data-bs-toggle="modal" data-bs-target="#movie3">
+        <div class="card-body">
+          <h5 class="card-title">다크나이트 라이즈</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="modal fade" id="movie3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movie3Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://t1.daumcdn.net/cfile/tistory/174DD74C50095FF31A" class="d-block w-100" alt="다크나이트1">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://image.newdaily.co.kr/site/data/img/2012/07/26/2012072600022_0.jpg" class="d-block w-100" alt="다크나이트2">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://dimg.donga.com/wps/NEWS/IMAGE/2012/07/20/47917065.3.jpg" class="d-block w-100" alt="다크나이트3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <article class="card"><img style="height:300px" src="https://upload.wikimedia.org/wikipedia/ko/5/5a/%EA%B7%B8%EB%9E%9C%EB%93%9C%EB%B6%80%EB%8B%A4%ED%8E%98%EC%8A%A4%ED%8A%B8%ED%98%B8%ED%85%94_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg" alt="movie4" class="card-img-top" data-bs-toggle="modal" data-bs-target="#movie4">
+        <div class="card-body">
+          <h5 class="card-title">그랜드 부다페스트 호텔</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="modal fade" id="movie4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movie4Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="carouselExampleControls3" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="http://topclass.chosun.com/news_img/1812/1812_112.jpg" class="d-block w-100" alt="호텔1">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://image.cine21.com/resize/cine21/article/2014/0317/15_08_03__5326914325193[H800-].jpg" class="d-block w-100" alt="호텔2">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://cdn.mhns.co.kr/news/photo/201810/151273_199665_4114.png" class="d-block w-100" alt="호텔3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls3" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls3" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <article class="card"><img style="height:300px" src="https://ww.namu.la/s/d1f73ab13ed147e4a82f43ddd681dfb31a5dab297d5a4fa0995a4408fb383d5338c11ac1a42c4e5a39054bb8952b2d558dba4ec2049289ca93c1d4fd2a32ffe3acf21dd75f9b99ea5634df112ccc98aa81c91007f1a7991226c685bbe039a8e0" alt="movie5" class="card-img-top" data-bs-toggle="modal" data-bs-target="#movie5">
+        <div class="card-body">
+          <h5 class="card-title">그녀</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="modal fade" id="movie5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movie5Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="carouselExampleControls4" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://t1.daumcdn.net/cfile/blog/226DDF4E539852693E" class="d-block w-100" alt="그녀1">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://mblogthumb-phinf.pstatic.net/20141014_196/isabella_s_1413260141065T5sy1_JPEG/her2.jpg?type=w2" class="d-block w-100" alt="그녀2">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/9jqb/image/NWuv4AiLhQIDlAcwY4NCO1lc0K8.jpg" class="d-block w-100" alt="그녀3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls4" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls4" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <article class="card"><img style="height:300px" src="https://ww.namu.la/s/6da2d845b848e47a5099419b3155d4ab2de7a159ce5b6514003514ecc8bc8b1a9d563520f128c6c0be7a32eb1d5ed0dc5fa32931ac78bf256b01dc0b9f78d8808a8a67d3da61a0fb4ee9a28ea870c015339a0ce12704f6932f06401683d3c875" alt="movie6" class="card-img-top" data-bs-toggle="modal" data-bs-target="#movie6">
+        <div class="card-body">
+          <h5 class="card-title">위대한 쇼맨</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</div> 
+
+<div class="modal fade" id="movie6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movie6Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="carouselExampleControls5" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://img.hankyung.com/photo/202012/AA.24823468.1.jpg" class="d-block w-100" alt="쇼맨1">
+            </div>
+            <div class="carousel-item">
+              <img src="https://mblogthumb-phinf.pstatic.net/MjAxNzEyMjhfODEg/MDAxNTE0NDQxMzk4ODk3.NyMtkmv-JWgWycI9ATFQyQCshrVl6ARTco7RONiyloMg.KaXz71A1RPM8s35Sv-2DHEKnXkf5IGfiBrbiQIpE6y4g.JPEG.jieunerika/%EC%9C%84%EB%8C%80%ED%95%98%EC%87%BC%EB%A7%A8_%EB%8B%A8%EC%B2%B4%EC%82%AC%EC%A7%84.jpg?type=w800" alt="쇼맨2">
+            </div>
+            <div class="carousel-item">
+              <img src="https://bimage.interpark.com/goods_image/0/8/5/7/283720857g.jpg" class="d-block w-100" alt="쇼맨3">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls5" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls5" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
