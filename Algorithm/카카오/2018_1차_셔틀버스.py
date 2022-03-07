@@ -2,7 +2,7 @@ def solution(n, t, m, timetable):
     ans = 0
 
     # 모든 시간을 분으로 환산해서 생각한다.
-    # 9:10 -> 9*60 + 10 = 550(분)
+    # 09:10 -> 9*60 + 10 = 550(분)
 
     crew = [int(time[:2])*60 + int(time[3:]) for time in timetable]     # 크루 도착 시각 리스트
     crew.sort()
