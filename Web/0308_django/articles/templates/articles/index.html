@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>메인 페이지</h1>
+<div>
+  {% for article in article_list %}
+    <article>
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.content }}</p>
+      <p>{{ article.created_at }}</p>
+      <a href="{% url 'articles:detail' article.pk %}"> 자세히 => </a>
+    </article>
+    <hr>
+  {% endfor %}
+</div>
+
+{% endblock content %}

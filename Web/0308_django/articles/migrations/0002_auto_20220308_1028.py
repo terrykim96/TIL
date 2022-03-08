@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='article',
-            name='update_at',
+            name='updated_at',
             field=models.DateTimeField(auto_now=True),
         ),
     ]
