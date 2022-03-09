@@ -4,10 +4,10 @@
   list-style: none;
 }
 
-.a_style {
+.a_style > a::after {
   content: '|';
   float:'right';
   color: white;
   text-decoration: none;
-  padding-right: 2rem;
+  padding-left: 0.7rem;
 }
