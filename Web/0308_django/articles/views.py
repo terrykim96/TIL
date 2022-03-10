@@ -57,3 +57,29 @@ def delete(request, article_pk):
 
     # 3. 메인으로 보낸다. (리다이렉트)
     return redirect('articles:index') 
+
+def edit(request, article_pk):
+    article = Article.objects.get(pk=article_pk)
+
+    context = {
+        'article' : article,
+    }
+
+    return render(request, 'articles/edit.html', context)
+
+def update(request, article_pk):
+    # 1. 수정해야되는 게시글을 DB에서 가져온다.
+    article = Article.objects.get(pk=article_pk)
+
+    # 2. 사용자가 보낸 정보를 request 객체에서 가져온다.
+    new_title = request.POST.get('title')
+    new_content = request.POST.get('content')
+
+    # 3. 수정 후 DB 반영
+    article.title = new_title
+    article.content = new_content
+
+    # (이 시점에 DB 반영)
+    article.save()
+
+    return redirect('articles:detail', article.pk)

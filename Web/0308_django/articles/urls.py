@@ -20,4 +20,11 @@ urlpatterns = [
 
     # 게시글 삭제
     path('<int:article_pk>/delete/', views.delete, name='delete'),
+
+    # 게시글 수정 페이지 요청
+    # ex) http://127.0.0.1.8000/articles/:pk/edit/
+    path('<int:article_pk>/edit/', views.edit, name='edit'),
+
+    # 게시글 수정 완료
+    path('<int:article_pk>/update/', views.update, name='update')
 ]

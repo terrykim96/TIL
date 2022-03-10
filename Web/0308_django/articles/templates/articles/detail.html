@@ -6,11 +6,13 @@
 <h2>제목: {{ article.title }}</h2>
 <p>내용: {{ article.content }}</p>
 <p>생성 시간: {{ article.created_at }}</p>
-<p>수정 시간: {{ article.updated_at }}</p>
+<p>수정 시간: {{ article.update_at }}</p>
 
 <form action="{% url 'articles:delete' article.pk %}" method="POST">
   {% csrf_token %}
   <button>삭제</button>
 </form>
+
+<a href="{% url 'articles:edit' article.pk %}">수정하기</a>
 
 {% endblock content %}
