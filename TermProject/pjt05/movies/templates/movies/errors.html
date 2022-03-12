@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if errors.title  %}
+
+<p>{{ errors.title }}</p>
+
+{% endif %}
+
+{% if errors.audience %}
+
+<p>{{ errors.audience }}</p>
+
+{% endif %}
+
+{% if errors.score %}
+
+<p>{{ errors.score }}</p>
+
+{% endif %}
+
+{% if errors.date %}
+
+<p>{{ errors.date }}</p>
+
+{% endif %}
+
+{% endblock content %}
