@@ -11,3 +11,25 @@
   text-decoration: none;
   padding-left: 0.7rem;
 }
+
+.video-box ul {
+  overflow: hidden;
+  padding-bottom: 50%;
+  position: relative;
+}
+
+.video-box ul video {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.covid {
+  display: block;
+  width: 300px;
+  height: 38px;
+  background-color: #70122b;
+  position: relative;
+  top: -16px;
+  margin: 0 auto;
+}
