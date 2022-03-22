@@ -5,21 +5,21 @@ S = [list(map(int, input().split())) for _ in range(N)]
 members = list(range(N))
 possible_team = []
 
-#조합으로 가능한 모든 팀 생성해주기
+# 조합으로 가능한 모든 팀 생성해주기
 for team in list(combinations(members, N // 2)):
     possible_team.append(team)
 
-min_gap = 10000    #갭이 가장 작은 값을 찾는다.
+min_gap = 10000    # 갭이 가장 작은 값을 찾는다.
 for i in range(len(possible_team) // 2):
     #A 팀
     team = possible_team[i]
-    stat_A = 0          #A팀 능력치
+    stat_A = 0           # A팀 능력치
     for j in range(N // 2):
-        member = team[j] #멤버
+        member = team[j] # 멤버 
         for k in team:
-            stat_A += S[member][k] #멤버와 함께할 경우의 능력치들
+            stat_A += S[member][k] # 멤버와 함께할 경우의 능력치들
             
-    #A를 제외한 나머지 팀
+    # A를 제외한 나머지 팀
     team = possible_team[- i - 1]
     stat_B = 0
     for j in range(N // 2):
