@@ -2,9 +2,9 @@ def solution(record):
     answer = []
     dic = {}
     
-    for sentence in record:     # 처음에 inout, id, name으로 하려했는데 Leave일 때는 map으로 2개가 나와서 실패
+    for sentence in record:     # 처음에 inout, uid, name으로 하려했는데 Leave일 때는 map으로 2개가 나와서 그냥 tuple로 받음
         sentence_split = sentence.split()
-        if len(sentence_split) == 3:
+        if len(sentence_split) == 3:    # Enter나 Change면 딕셔너리에 value값으로 저장한다.
             dic[sentence_split[1]] = sentence_split[2]
             
     for sentence in record:
