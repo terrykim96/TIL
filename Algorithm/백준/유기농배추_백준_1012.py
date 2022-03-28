@@ -1,7 +1,7 @@
 import sys
 sys.setrecursionlimit(10**6)    # Recursion 에러가 발생해서 최대 깊이를 늘려준다.
 
-def search(x,y):    # 배추 찾는 알고리즘(재귀를 이용한다.)
+def search(x, y):    # 배추 찾는 알고리즘(재귀를 이용한다.)
     if x < 0 or x >= M or y < 0 or y >= N:
         return
 
