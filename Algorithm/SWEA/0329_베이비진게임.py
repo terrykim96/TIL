@@ -1,5 +1,3 @@
-
-
 def babygin(num, cnt_lst):  # 카드숫자, 카운팅리스트
     cnt_lst[num] += 1
     flag = 0
@@ -16,6 +14,7 @@ def babygin(num, cnt_lst):  # 카드숫자, 카운팅리스트
         return True
 
 T = int(input())
+
 for test_case in range(1, T + 1):
     card_lst = list(map(int, input().split()))
     cnt_1, cnt_2 = [0]*10, [0]*10
