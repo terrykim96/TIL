@@ -2,7 +2,7 @@ def dfs(x, depth):
     global ans
     visited[x] = 1
 
-    if depth == 4:
+    if depth == 4:      # 깊이가 4일 때는 친구 관계가 있다는 것이므로 ans를 1로 해준다.
         ans = 1
         return
     

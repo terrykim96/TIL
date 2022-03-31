@@ -1,9 +1,9 @@
 import sys
 sys.setrecursionlimit(10000)
 
-def dfs(v):
-    visited[v] = 1
-    for i in graph[v]:
+def dfs(x):
+    visited[x] = 1
+    for i in graph[x]:
         if not visited[i]:
             dfs(i)
             
