@@ -10,8 +10,8 @@ def bfs(graph, start):
     
     while queue:
         v = queue.popleft()
-
         color = visited[v]
+
         for i in graph[v]:  # V정점과 연결된 모든 정점 확인
             if visited[i] == 0:  # 아직 한번도 방문하지 않음
                 queue.append(i)  # 다음에 방문할 곳으로 지정
@@ -19,13 +19,15 @@ def bfs(graph, start):
                     visited[i] = 2
                 else:
                     visited[i] = 1
+
             elif visited[i] == 1:
                 if color == 1:
                     ans = 'NO'
                     return
+
             elif visited[i] == 2:
                 if color == 2:
-                    ans = 'No'
+                    ans = 'NO'
                     return 
     return
 
@@ -43,7 +45,7 @@ for _ in range(T):
 
     for i in range(1, V + 1): # 연결그래프일 경우에는 시작점에서 한번의 BFS를 수행하면 되지만 비연결그래프의 경우에는 모든 정점을 탐색해야 한다.
         bfs(graph, i)
-        if ans == 'No':
+        if ans == 'NO':
             break
     
     print(ans)
