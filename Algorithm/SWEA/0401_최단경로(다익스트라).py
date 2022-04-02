@@ -28,7 +28,7 @@ for test_case in range(1, T + 1):
                 index = i
         return index
 
-    # 다익스트라 알고리즘
+    # 다익스트라 알고리즘 
     def dijkstra(start):
     # 시작 노드
         distance[start] = 0
