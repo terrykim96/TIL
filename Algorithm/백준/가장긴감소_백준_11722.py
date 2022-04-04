@@ -1,6 +1,6 @@
 N = int(input())
 
-ans = [1] * N
+ans = [1] * N       # 가장 작은 길이는 1이므로 1부터 시작
 array = list(map(int, input().split()))
 
 for i in range(N):

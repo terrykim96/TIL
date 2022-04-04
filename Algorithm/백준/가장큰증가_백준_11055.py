@@ -1,7 +1,7 @@
 N = int(input())
 array = list(map(int, input().split()))
 
-ans = [1] * N       # ans[i]는 array[i]까지의 증가 부분 수열의 합이다.
+ans = [0] * N       # ans[i]는 array[i]까지의 증가 부분 수열의 합이다.
 ans[0] = array[0]
 
 for i in range(1, N):
