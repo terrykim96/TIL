@@ -1,0 +1,17 @@
+<h1>글쓰기</h1>
+
+<form action="{% url 'articles:new' %}" method="POST">
+  {% csrf_token %}
+
+  <div class="title-box">
+    <label for="title">제목:</label>  
+    <input type="text" id="title" name="title">
+  </div>
+  
+  <div class="content-box">
+    <label for="content">내용:</label>  
+    <input type="text" id="content" name="content">
+  </div>
+
+  <button>작성 완료</button>
+</form>
