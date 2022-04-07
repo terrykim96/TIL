@@ -1,0 +1,10 @@
+<h1>수정하기</h1>
+
+<form 
+  action="{% url 'articles:edit' form.instance.pk %}" 
+  method="POST"
+>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button>작성 완료</button>
+</form>

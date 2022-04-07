@@ -1,0 +1,13 @@
+<h1>자세히 보기</h1>
+
+<h2>제목: {{ article.title }}</h2>
+<h2>내용: {{ article.content }}</h2>
+<h2>생성일: {{ article.created_at }}</h2>
+<h2>수정일: {{ article.updated_at }}</h2>
+<a href="{% url 'articles:edit' article.pk %}">
+  수정하기
+</a>
+
+<a href="{% url 'articles:index' %}">
+  홈으로 가기
+</a>

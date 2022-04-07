@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<header>
+  <a href="{% url 'posts:index' %}">
+    뒤로가기
+  </a>
+</header>
+
+<main>
+  <h1>{{ post.title }}</h1>
+  <small>{{ post.created_at }}</small>
+  <small>{{ post.views }}명이 봤습니다.</small>
+
+  {% if post.image %}
+    <img src="{{ post.image.url }}" alt="">
+  {% endif %}
+
+  <p>{{ post.content }}</p>
+</main>
+
+<footer>
+  <a href="{% url 'posts:edit' post.pk %}" class="btn btn-outline-success">
+    수정하기
+  </a>
+
+  <form action="{% url 'posts:delete' post.pk %}" method="POST">
+    {% csrf_token %}
+    <button>delete</button>
+    
+  </form>
+</footer>
+
+{% endblock content %}
