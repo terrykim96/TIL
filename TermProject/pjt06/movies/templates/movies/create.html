@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h1>Create</h1>
+<hr>
+<form action="" method='POST' enctype='multipart/form-data'>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class='btn btn-outline-primary'>작성하기</button>
+</form>
+  <hr>
+  <a href="{% url 'movies:index' %}">BACK</a>
+
+</form>
+
+{% endblock content %}
