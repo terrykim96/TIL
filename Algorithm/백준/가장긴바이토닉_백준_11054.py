@@ -7,7 +7,7 @@ reverse_array = array[::-1]
 d_front = [1] * N
 d_rear = [1] * N
 
-for i in range(N):
+for i in range(N):  # 전체에 대해
     for j in range(i):
         if array[j] < array[i]: # 앞에서부터
             d_front[i] = max(d_front[i], d_front[j]+1)
