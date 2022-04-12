@@ -1,35 +1,48 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block style %}
+<style>
+  .btn-prev:hover {
+    width: fit-content;
+    display: block;
+   
+  }
+</style>
+{% endblock %}
 
-<header>
-  <a href="{% url 'posts:index' %}">
-    뒤로가기
+{% block content %}
+<header class="w-50 mx-auto my-5">
+  <a href="{% url 'posts:index' %}" class="btn-prev text-dark">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+    </svg>
   </a>
 </header>
 
-<main>
-  <h1>{{ post.title }}</h1>
-  <small>{{ post.created_at }}</small>
-  <small>{{ post.views }}명이 봤습니다.</small>
+<main class="w-50 mx-auto">
+  <div class="my-3">
+    <h1>{{ post.title }}</h1>
+    <small>{{ post.created_at }}</small> |
+    <small>{{ post.views }}명이 봤습니다.</small>
+  </div>
 
   {% if post.image %}
-    <img src="{{ post.image.url }}" alt="">
+    <img width="100%" src="{{ post.image.url }}" alt="">
   {% endif %}
-
-  <p>{{ post.content }}</p>
+  <p class="my-3">{{ post.content }}</p>
 </main>
 
-<footer>
-  <a href="{% url 'posts:edit' post.pk %}" class="btn btn-outline-success">
+<footer class="w-50 mx-auto mb-5 d-flex gap-3 justify-content-end">
+  <a 
+    href="{% url 'posts:edit' post.pk %}" 
+    class="btn btn-outline-success"
+  >
     수정하기
   </a>
 
   <form action="{% url 'posts:delete' post.pk %}" method="POST">
     {% csrf_token %}
-    <button>delete</button>
-    
+    <button class="btn btn-outline-danger">삭제하기</button>
   </form>
 </footer>
-
-{% endblock content %}
+{% endblock %}
