@@ -1,9 +1,10 @@
-from django.contrib.auth.forms import UserChangeForm 
+from django.contrib.auth.forms import UserChangeForm
 # from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
 
-User = get_user_model() # == User 모델 (현재 프로젝트에서 활성화된 User 모델)
+User = get_user_model() # == User 모델 (현재 프로젝트에서 활성화된 User 모델
+
 
 class CustomUserChangeForm(UserChangeForm):
     password = None

@@ -23,7 +23,7 @@ def new(request):
     글쓰기 (ModelForm)
     - GET: 폼이 담긴 템플릿 반환
     - POST: 사용자 요청 정보 유효성 검사 & 저장
-    """    
+    """
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES) # bound form
         if form.is_valid():                          # 유효성 검사
@@ -71,13 +71,12 @@ def edit(request, pk):
     return render(request, 'posts/edit.html', context)
 
 
-# @login_required
-@require_http_methods(['POST']) # POST 아니면 405 (Method Not Allowed)
+# @login_required # 로그인이 안되어있으면 => 로그인 페이지로 이동
+@require_http_methods(['POST']) # POST 아니면 => 405 (Method Not Allowed) 에러 발생
 def delete(request, pk):
-    # 로그인 되지 않은 경우
-    if not request.user.is_authenticated: 
-        return HttpResponse('권한이 없습니다.', status=401)
-        # return redirect('accounts:login')
+    if not request.user.is_authenticated:
+        # 401 == Unauthorized
+        return HttpResponse('너 권한 없음...!', status=401) 
     
     post = get_object_or_404(Post, pk=pk)
     post.delete()

@@ -24,19 +24,13 @@ def signup(request):
     - GET: 회원가입 폼이 담긴 페이지 응답
     - POST: 사용자 회원정보 받아서 회원가입 
     """
-    
-    # 로그인 된 사용자 접근 거부
-    if request.user.is_authenticated:
-        return redirect('posts:index')
-
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save() # 신규 유저 DB에 생성
+            form.save()
             return redirect('posts:index')
     else:
         form = UserCreationForm()
-
     context = {
         'form': form,
     }
@@ -53,6 +47,7 @@ def login(request):
         return redirect('posts:index')
     
     if request.method == 'POST':
+        # 인증 => 사용자 요청 정보 필수 (아이디, 비밀번호, 세션, 쿠키 ...)
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             user = form.get_user()    
@@ -102,17 +97,18 @@ def update(request):
         
 
 @login_required 
-def password(request):
+def change_password(request):
     if request.method == 'POST':
-        form = PasswordChangeForm(request.user, request.POST)
+        # 1) 현재 로그인된 사용자 정보 바인딩 (request.user)
+        # 2) 사용자가 보낸 수정된 비밀번호 정보 (request.POST)
+        form = PasswordChangeForm(request.user, request.POST) # (작성 순서 중요!!!)
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
             return redirect('posts:index')
     else:
         form = PasswordChangeForm(user=request.user)
-    
     context = {
         'form': form,
     }
-    return render(request, 'accounts/password.html', context)
+    return render(request, 'accounts/change_password.html', context)

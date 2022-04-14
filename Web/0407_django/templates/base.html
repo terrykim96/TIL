@@ -11,6 +11,7 @@
 </head>
 <body>
   <div class="container">
+    {{ user }}
     <nav>
       <ul>
         {% if request.user.is_authenticated %}
@@ -25,7 +26,7 @@
             <a href="{% url 'accounts:update' %}">내 정보 수정</a>
           </li>
           <li>
-            <a href="{% url 'accounts:password' %}">비밀번호 수정</a>
+            <a href="{% url 'accounts:change_password' %}">비밀번호 수정</a>
           </li>
         {% else %}
           <li>

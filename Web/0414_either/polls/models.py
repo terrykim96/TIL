@@ -33,4 +33,4 @@ class Comment(models.Model):
     )
     content = models.TextField()
 
-
+    
