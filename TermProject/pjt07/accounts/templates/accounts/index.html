@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block context %}
+
+	<div class='container col-8'>
+
+		<h1 class='my-4'>유저목록</h1>
+		{% for account in accounts %}
+			<p class='justify-content-center fs-4'>{{ account }}</p>
+			<hr>
+		{% endfor %}
+	</div>
+
+{% endblock context %}

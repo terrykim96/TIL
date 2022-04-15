@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	{% block style %}
+	{% endblock style %}
+	<title>SSAFY MOVIES</title>
+</head>
+<body>
+	<nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark text-white">
+		<div class="container-fluid">
+			<a href="http://127.0.0.1:8000/" class="navbar-brand text-white">SSAFY MOVIE</a>
+			<div class="d-flex flex-row mx-3 col-8 g-4 justify-content-end align-items-center">
+
+				{% if request.user.is_authenticated %}
+					{{ request.user.username }} 님 안녕하세요!
+					<li class='d-block ms-4'>
+						<form action="{% url 'accounts:update' %}">
+							<button class='btn btn-secondary'>회원정보수정</button>
+						</form>
+					</li>
+					<li class='d-block mx-3'>
+						<form action="{% url 'accounts:change_password' %}">
+							<button class='btn btn-secondary'>비밀번호수정</button>
+						</form>
+					</li>
+					<li class='d-block'>
+						<form action="{% url 'accounts:logout' %}" method='POST'>
+							{% csrf_token %}
+							<button class='btn btn-secondary'>로그아웃</button>
+						</form>
+					</li>
+					<li class='d-block ms-3'>
+						<form action="{% url 'accounts:delete' %}" method='POST'>
+							{% csrf_token %}
+							<button class='btn btn-danger'>회원탈퇴</button>
+						</form>
+					</li>
+				{% else %}
+						<li class='d-block'>
+							<form action="{% url 'accounts:signup' %}" method='POST'>
+								{% csrf_token %}
+								<button class='btn btn-secondary'>회원가입</button>
+							</form>
+						</li>
+						<li class='d-block ms-3'>
+							<form action="{% url 'accounts:login' %}" method='POST'>
+								{% csrf_token %}
+								<button class='btn btn-info'>로그인</button>
+							</form>
+						</li>
+				{% endif %}
+				<li class='d-block ms-3'>
+					<form action="{% url 'accounts:index' %}" method='POST'>
+						{% csrf_token %}
+						<button class='btn btn-info'>유저목록</button>
+					</form>
+				</li>
+	
+			</div>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+				<ul class="navbar-nav">
+					<form action="{% url 'movies:search' %}" method='GET' class="d-flex flex-row form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" name="search_key">
+						<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	{% block context %}
+	{% endblock context %}
+	<h1 class="m-5 p-5"> </h1>
+
+
+	<!-- Footer -->
+  <footer class="fixed-bottom bg-secondary">
+    <div class="container d-flex justify-content-between align-items-center py-2 text-white">
+      <a>©SSAFY</a>
+			<a class="btn btn-light" href="#">Page Up</a>
+    </div>
+	</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>

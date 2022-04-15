@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block style %}
+	<style>
+		div > form {
+			background: linear-gradient(0.65turn, #e66465, #9198e5, #e66465);
+		}
+	</style>
+{% endblock style %}
+
+{% block context %}
+
+	<div class="container d-flex flex-column align-items-center">
+		<header class="container d-flex col-6 my-3">
+			<h1>CREATE</h1>
+		</header>
+
+		<form action="" method="POST" enctype="multipart/form-data" class='card border-0 p-4 col-6'>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button class="btn btn-primary">
+				작성하기
+			</button>
+		</form>
+	</div>
+
+{% endblock context %}

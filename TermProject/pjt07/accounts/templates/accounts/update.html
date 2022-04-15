@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block context %}
+
+<div class='container mt-4 d-flex flex-row justify-content-center align-items-center'>
+	<form action="" method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class='btn btn-info'>회원정보수정</button>
+	</form>
+</div>
+
+
+{% endblock context %}

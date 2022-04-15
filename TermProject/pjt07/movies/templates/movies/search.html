@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block style %}
+	<style>
+		article:hover {
+			background: linear-gradient(0.65turn, #e66465, #9198e5, #e66465);
+			color: white;
+			transition: 0.3s ease-in-out;
+		}
+	</style>
+{% endblock style %}
+
+{% block context %}
+
+	{% if messages %}
+	<ul class="messages list-unstyled">
+			{% for message in messages %}
+			<li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+				{{ message }}
+			</li>
+			{% endfor %}
+	</ul>
+	{% endif %}
+
+	<div class="container p-1">
+		<div class="container d-flex col-8 m-3 align-items-center">
+			<h1 class="m-0">INDEX</h1>
+			<div class="container col-8 m-1">
+				<a href="{% url 'movies:create' %}" class="btn btn-outline-danger rounded-circle">+</a>
+			</div>
+		</div>
+		<hr>
+		<div class="card-group row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
+			{% for movie in movies %}
+				<div class="col">
+					<a href="{% url 'movies:detail' movie.pk %}" class="text-decoration-none text-dark">
+						<article class="card col p-2 w-100 h-100">
+							<div style="height:70%;">
+								<img src="{{ movie.poster_url }}" alt="게시글 이미지" class="w-100 h-100">
+							</div>
+							<div class="card-body d-flex flex-column justify-content-evenly" style="height:132px;">
+								<h4 class="card-title">{{ movie.title }}</h4>
+							</div>
+						</article>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+		<hr>
+
+{% endblock context %}
