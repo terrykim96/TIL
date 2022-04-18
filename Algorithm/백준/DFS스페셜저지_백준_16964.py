@@ -1,21 +1,14 @@
 from collections import deque
 
-def bfs(x):
-    visited = [0] * (N + 1)
-    queue = deque([x])
-    ans = [1]
+def dfs(x):
+    if visited[x]:
+        return
+    ans.append(x)
     visited[x] = 1
 
-    while queue:
-        v = queue.popleft()
-        
-        for node in graph[v]:
-            if not visited[node]:
-                queue.append(node)
-                visited[node] = 1
-                ans.append(node)
-    
-    return ans
+    for node in graph[x]:
+        if not visited[node]:
+            dfs(node)
 
 N = int(input())
 graph = [[] for _ in range(N + 1)]
@@ -35,7 +28,9 @@ for i in range(N):      # order 리스트에 노드 우선순위를 담는다.
 for i in range(1, N + 1):   # 그래프 인접 요소를 order 리스트 값에 따라 바꿔준다.
     graph[i].sort(key= lambda x : order[x])
 
-ans = bfs(1)
+visited = [0] * (N + 1)
+ans = []
+dfs(1)
 
 if ans == path:
     print(1)
