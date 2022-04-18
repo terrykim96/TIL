@@ -8,14 +8,12 @@ from django.contrib.auth import (
 from django.contrib.auth.models import User 
 from django.contrib.auth.forms import (
     AuthenticationForm, 
-    UserCreationForm,
-    UserChangeForm,
     PasswordChangeForm,
 )
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 
-from .forms import CustomUserChangeForm
+from .forms import CustomUserChangeForm, CustomUserCreationForm
 
 
 # Create your views here.
@@ -25,12 +23,12 @@ def signup(request):
     - POST: 사용자 회원정보 받아서 회원가입 
     """
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('posts:index')
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     context = {
         'form': form,
     }
@@ -103,7 +101,7 @@ def change_password(request):
         # 2) 사용자가 보낸 수정된 비밀번호 정보 (request.POST)
         form = PasswordChangeForm(request.user, request.POST) # (작성 순서 중요!!!)
         if form.is_valid():
-            form.save()
+            form.save(commit)
             update_session_auth_hash(request, form.user)
             return redirect('posts:index')
     else:

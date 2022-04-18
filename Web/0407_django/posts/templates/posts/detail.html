@@ -33,6 +33,22 @@
 </main>
 
 <footer class="w-50 mx-auto mb-5 d-flex gap-3 justify-content-end">
+  {% comment %} 
+  
+  /:pk/like/
+
+  {% endcomment %}
+  <form action="{% url 'posts:like' post.pk %}" method="POST">
+    {% csrf_token %}
+    
+    {% if request.user in post.like_users.all %}
+      <button class="btn"><i class="fa-solid fa-heart"></i></button>
+    {% else %}
+      <button class="btn"><i class="fa-regular fa-heart"></i></button>
+    {% endif %}
+  </form>
+  <small>{{ post.like_users.count }}명이 이 글을 좋아합니다.</small>
+
   <a 
     href="{% url 'posts:edit' post.pk %}" 
     class="btn btn-outline-success"

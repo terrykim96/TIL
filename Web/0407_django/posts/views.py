@@ -27,7 +27,10 @@ def new(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES) # bound form
         if form.is_valid():                          # 유효성 검사
-            form.save()                              # DB 저장
+            post = form.save(commit=False)                              # DB 저장
+
+            post.author = request.user
+            post.save()
             messages.add_message(request, messages.INFO, '글이 성공적으로 작성되었습니다.')
             return redirect('posts:index')
     else:
@@ -83,3 +86,19 @@ def delete(request, pk):
     messages.add_message(request, messages.ERROR, '글이 성공적으로 삭제되었습니다.')
     return redirect('posts:index')
 
+def like(request, pk):
+    # 1. 좋아요 누른 게시글 정보와 유저 객체 가져오기
+    post = get_object_or_404(Post, pk=pk)
+    user = request.user
+
+    # 2. 이미 좋아요를 누른 사람이라면,,,
+    if post.like_users.filter(pk=user.pk).exists(): # User 테이블 참조 (post.like_users.filter(username='')같이 사용 가능)
+        # 해당 user를 중개 테이블에서 제거(== 좋아요 취소)
+        post.like_users.remove(user)
+
+    # 3. 좋아요를 처음 누르는 사람이라면,,,
+    else:
+        # 해당 user를 중개 테이블에 추가 (== 좋아요)
+        post.like_users.add(user)
+
+    return redirect('posts:detail', post.pk, post.slug)

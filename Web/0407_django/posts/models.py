@@ -1,7 +1,12 @@
+from tkinter import CASCADE
 from django.db import models
 from django.utils.text import slugify
+from django.conf import settings
 
 # Create your models here.
+class Hashtag(models.Model):
+    content = models.CharField(max_length=10)
+
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -10,7 +15,19 @@ class Post(models.Model):
     image = models.ImageField(null=True, blank=True)
     slug = models.SlugField()
     views = models.IntegerField(default=0)
+
+    hashtags = models.ManyToManyField(Hashtag, blank=True)
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete= models.CASCADE
+    )
     
+    like_users = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        blank= True,
+        related_name='like_posts',
+    )
+
     def save(self, *args, **kwargs):
         # title 정보를 slugify해서 저장
         self.slug = slugify(self.title, allow_unicode=True)
@@ -32,5 +49,8 @@ class Comment(models.Model):
         related_name='comments',
     )
     content = models.TextField()
-
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete= models.CASCADE
+    )
 
