@@ -1,3 +1,4 @@
+from itertools import count
 from django.http import HttpResponse
 from django.shortcuts import (render, redirect, get_object_or_404)
 from django.contrib import messages
@@ -9,7 +10,11 @@ from .forms import PostForm
 
 # Create your views here.
 def index(request):
-    posts = Post.objects.order_by('-created_at')
+    # annotate를 이용한 최적화
+    from django.db.models import Count
+    posts = Post.objects.annotate(
+        comment_cnt = Count('comments')
+    ).order_by('-created_at')
     context = {
         'posts': posts,
     }
@@ -86,6 +91,7 @@ def delete(request, pk):
     messages.add_message(request, messages.ERROR, '글이 성공적으로 삭제되었습니다.')
     return redirect('posts:index')
 
+@login_required
 def like(request, pk):
     # 1. 좋아요 누른 게시글 정보와 유저 객체 가져오기
     post = get_object_or_404(Post, pk=pk)

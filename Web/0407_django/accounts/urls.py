@@ -9,4 +9,6 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('update/', views.update, name='update'), # 회원 정보 수정
     path('change_password/', views.change_password, name='change_password'),
+    path('<str:username>/', views.profile, name='profile'),
+    path('<str:username>/follows/', views.follows, name='follows'),
 ]

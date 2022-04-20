@@ -22,6 +22,11 @@
 <main class="w-50 mx-auto">
   <div class="my-3">
     <h1>{{ post.title }}</h1>
+    <small>
+      <a href="{% url 'accounts:profile' post.author.username %}">
+        {{ post.author }}
+      </a>
+    </small> |
     <small>{{ post.created_at }}</small> |
     <small>{{ post.views }}명이 봤습니다.</small>
   </div>

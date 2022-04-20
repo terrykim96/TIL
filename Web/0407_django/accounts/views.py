@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import (
     authenticate, 
     login as auth_login,
     logout as auth_logout,
     update_session_auth_hash,
+    get_user_model
 )
 from django.contrib.auth.models import User 
 from django.contrib.auth.forms import (
@@ -101,7 +102,7 @@ def change_password(request):
         # 2) 사용자가 보낸 수정된 비밀번호 정보 (request.POST)
         form = PasswordChangeForm(request.user, request.POST) # (작성 순서 중요!!!)
         if form.is_valid():
-            form.save(commit)
+            form.save()
             update_session_auth_hash(request, form.user)
             return redirect('posts:index')
     else:
@@ -110,3 +111,28 @@ def change_password(request):
         'form': form,
     }
     return render(request, 'accounts/change_password.html', context)
+
+def profile(request, username):
+    # models.py => settings.AUTH_USER_MODEL
+    # 그 외 모든 곳 => get_user_model()
+
+    user_info = get_object_or_404(get_user_model(), username=username)
+    context = {
+        'user_info' : user_info,
+    }
+    return render(request, 'accounts/profile.html', context)
+
+def follows(request, username):
+    you = get_object_or_404(    # Follow 당하는 사람
+        get_user_model(),
+        username=username,
+    )
+    me = request.user           # Follow 하는 사람
+    
+    if you.username != me.username: # 예외처리
+        if you.followers.filter(username = me.username).exists():
+            you.followers.remove(me)
+        else:
+            you.followers.add(me)
+
+    return redirect('accounts:profile', you.username)

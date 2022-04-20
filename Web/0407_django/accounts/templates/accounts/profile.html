@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% comment %} 
+
+/accounts/:username/likes/ GET    => 좋아요 한 목록
+/accounts/:username/likes/ POST   => 좋아요 목록에 새 데이터 추가
+/accounts/:username/likes/ PUT    => 좋아요 수정
+/accounts/:username/likes/ DELETE => 좋아요 삭제
+
+{% endcomment %}
+
+<h1 class='mb-4'>{{ user_info.username }}님의 프로필</h1>
+
+<a href="{% url 'posts:index' %}" class="btn-prev text-dark">
+  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+  </svg>
+</a>
+{% if request.user.username != user_info.username %}
+<form action="{% url 'accounts:follows' user_info.username %}" method='POST'>
+  {% csrf_token %}
+
+  {% if request.user in user_info.followers.all  %}  
+    <button>UNFOLLOW</button>
+  {% else %}
+    <button>FOLLOW</button>
+  {% endif %}
+</form>
+{% endif %}
+<hr>
+
+<div class='mt-5'>
+  <h3>작성한 글 목록</h3>
+  {% for post in user_info.post_set.all  %}
+    <a href="{% url 'posts:detail' post.pk post.slug %}">
+      {{ post.title }}
+    </a>
+  {% endfor %}
+  <hr>
+  
+  <h3>작성한 댓글 목록</h3>
+  {% for comment in user_info.comment_set.all  %}
+    <a href="{% url 'posts:detail' comment.post.pk post.comment.post.slug %}">
+      {{ comment.content }}
+    </a>
+  {% endfor %}
+  <hr>
+  
+  <h3>좋아요 누른 글 목록</h3>
+  {% for post in user_info.like_posts.all %}
+    <a href="{% url 'posts:detail' post.pk post.slug %}">
+      {{ post.title }}
+    </a>
+  {% endfor %}
+  <br>
+</div>
+
+<h2>Followers</h2>
+{% comment %}
+<p>{{ user_info.followers.all | length }}</p> 
+{% endcomment %}
+<p>{{ user_info.followers.count }}</p>
+
+{% for follower in user_info.followers.all %}
+  <a href="{% url 'accounts:profile' follower.username %}">
+    {{ follower.username }}
+  </a>
+{% endfor %}
+
+<h2>Followees</h2>
+<p>{{ user_info.followees.count }}</p>
+{% for followee in user_info.followees.all %}
+  <a href="{% url 'accounts:profile' followee.username %}">
+    {{ followee.username }}
+  </a>
+{% endfor %}
+
+{% endblock content %}
