@@ -12,10 +12,7 @@ for _ in range(N):
 def flip(i, j): # 뒤집기 함수
     for x in range(i, i + 3):
         for y in range(j, j + 3):
-            if A[x][y] == 0:
-                A[x][y] = 1
-            else:
-                A[x][y] = 0
+           A[x][y] = int(not A[x][y])
 
 
 cnt = 0
