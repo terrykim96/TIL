@@ -1,6 +1,6 @@
 def zeroClick(state):               # 첫번째를 누르는 경우
-    cnt=1
-    state[0]=int(not state[0])      # 0과 1은 not으로 바꿀 수 있다.
+    cnt = 1
+    state[0] = int(not state[0])      # 0과 1은 not으로 바꿀 수 있다.
     state[1] = int(not state[1])
     
     for i in range(1, N):
@@ -19,7 +19,7 @@ def zeroClick(state):               # 첫번째를 누르는 경우
 
 
 def zeroNoClick(state):             # 첫번째를 안누르는 경우
-    cnt=0
+    cnt = 0
     for i in range(1, N):
         if(state[i - 1] != result[i - 1]):
             cnt += 1
