@@ -7,7 +7,9 @@
 1.  목표
 
    - DRF(Django Rest Framework)를 활용한 API Server 제작
-- Database 1:N, M:N에 대한 이해
+   
+   - Database 1:N, M:N에 대한 이해
+     
    
 
 
