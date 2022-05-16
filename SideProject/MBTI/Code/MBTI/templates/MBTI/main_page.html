@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<h1>총 참여 인원: {{ viewers }}</h1>
+<h1>가장 많은 유형: {{ max_mbti }}</h1>
+<h1>가장 적은 유형: {{ min_mbti }}</h1>
+
+{% block content %}
+  <div class="mb-3 d-flex justify-content-center">
+    <span class="title">
+      개발자 MBTI aaaaa
+    </span>
+  </div>
+  <img src="{%static 'main.gif'%}" alt="" class="main-img">
+  <a href="javascript:click()" class="mt-4 mb-5 d-flex justify-content-center align-items-center start-box">
+    <span class="start-font">
+      START
+    </span>
+  </a>
+
+  <div class="my-2 d-flex flex-column justify-content-center align-items-center info-box">
+    <p class="infofont-s mb-1">참여자 수</p>
+    <p class="infofont-l">{{ viewers }}</p>
+  </div>
+  <div class="my-2 d-flex flex-column justify-content-center align-items-center info-box">
+    <p class="infofont-s mb-1">가장 많은 유형</p>
+    <p class="infofont-l">{{ max_mbti }} '{{ max_mbti_type }}'</p>
+  </div>
+  <div class="my-2 d-flex flex-column justify-content-center align-items-center info-box">
+    <p class="infofont-s mb-1">가장 적은 유형</p>
+    <p class="infofont-l">{{ min_mbti }} '{{ min_mbti_type }}'</p>
+  </div>
+{% endblock content %}
+
+{% block script %}
+<script>
+  function click() {
+    const mbtiDict = {'1':0, '2':0, '3':0, '4':0, '5':0, '6':0, '7':0, '8':0, '9':0, '10':0, '11':0, '12':0}
+    const testList = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    localStorage.setItem('mbtiDict', JSON.stringify(mbtiDict));
+    localStorage.setItem('testList', JSON.stringify(testList));
+
+    location.href = '1/'
+  }
+</script>
+{% endblock script %}

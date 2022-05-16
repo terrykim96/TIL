@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- 결과 타이틀 -->
+  <div class="d-flex flex-column align-items-center">
+    <div class="res-subtitle">내 친구에게 어울리는 개발자는?</div>
+    <div class="res-maintitle px-2 my-2">'{{ mbti_type }}'</div>
+    <div class="res-mbti">아마도 그 사람은 {{ mbti_name }}...?</div>
+  </div>
+
+  <!-- 결과 이미지 -->
+  <img src="{% get_static_prefix %}{{ top_image }}" alt="res-main-img" class="main-img mt-4 mb-3">
+
+  <!-- 결과 설명 -->
+  <ul class="content-font pt-2 pb-3 pe-3 mt-2 mb-3 border">
+    {% for info in base_infos %}
+      <li class="mt-2">{{ info.content }}</li>
+    {% endfor %}
+  </ul>
+
+  <!-- 나는 어떤 개발자? howto for문 수정 -->
+  <p class="develop-title">{{mbti_type}}는?</p>
+  <ul class="develop-font pt-2 pb-3 pe-3 mt-2 mb-5 border">
+    <li class="mt-2">하고 싶은 일을 만나면 브레이크가 고장난 8톤 트럭이 되고, 하기 싫은 일을 만나면 브레이크가 과하게 잘 작동되다.</li>
+    <li class="mt-2">(약속 Before) 귀찮아 귀찮아 귀찮아 나가기 싫어 나가기 싫어 => (약속 after) 오늘 너무 꿀잼이고 ~ 담에 또 봐야겠다 ~</li>
+    <li class="mt-2">어떠한 상황에서도 페이커급의 반응속도로 대처한다.</li>
+  </ul>
+  
+  <!-- 최고 최악 궁합 -->
+  <div class="w-100 row m-0">
+    <div class="w-50 d-flex col-6 flex-column align-items-center p-0">
+      <p class="chemi-title mb-2">우린 제법 잘 어울려요</p>
+      <p class="chemi-name">{{ best_mbti.mbti_type }}</p>
+      <img src="{% get_static_prefix %}{{ best_mbti.top_image }}" alt="best-chemi-img" class="chemi-img">
+    </div>
+    <div class="w-50 d-flex col-6 flex-column align-items-center p-0">
+      <p class="chemi-title mb-2">당신과는 천천히</p>
+      <p class="chemi-name">{{ worst_mbti.mbti_type }}</p>
+      <img src="{% get_static_prefix %}{{ worst_mbti.top_image }}" alt="worst-chemi-img" class="chemi-img">
+    </div>
+  </div>
+
+  <hr class="my-3">
+
+  <a href="{% url 'mbti:main_page' %}" class="mt-2 mb-4 d-flex justify-content-center align-items-center start-box">
+    <span class="start-font">
+      ♪ 나도 하기 ♪
+    </span>
+  </a>
+{% endblock content %}
