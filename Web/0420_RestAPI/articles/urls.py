@@ -5,7 +5,6 @@ urlpatterns = [
     # http://localhost:8000/api/v1/articles/
     path('', views.article_list),
 
-    # http://localhost:8000/api/v1/articles/
     path('<int:pk>/', views.article_detail),
 
     path('<int:article_pk>/comments/', views.comment_list),
