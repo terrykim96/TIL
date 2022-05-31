@@ -26,6 +26,6 @@ class Comment(models.Model):
     )
     parent = models.ForeignKey(
         'self',
-        on_delete=CASCADE,
+        on_delete=models.CASCADE,
         null = True
     )
