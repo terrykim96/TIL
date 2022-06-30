@@ -18,7 +18,7 @@ distance = [inf] * (N + 1)    # 최단 거리 테이블을 모두 무한으로 �
 # 간선 정보를 입력한다.
 for _ in range(M):
     a, b, c = map(int, input().split())
-    # a->b가 c비용
+    # a -> b가 c비용
     graph[a].append((b, c))
 
 

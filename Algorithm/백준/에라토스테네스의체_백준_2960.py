@@ -4,7 +4,7 @@ nums = [True] * (N + 1)
 
 for i in range(2, N + 1):
     for j in range(i, N + 1, i):    # 배수가 나올 때마다 true를 false로 바꿔주면서 cnt를 늘려준다.
-        if nums[j] == True:
+        if nums[j]:
             nums[j] = False
             cnt += 1
 
