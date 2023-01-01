@@ -6,12 +6,12 @@ student_num = int(input()) # 테스트 케이스의 개수
 for _ in range(student_num):
     student_info.append(list(map(int, input().split())))
 
-def boys(num):
+def boys(num):              # 남자
     for i in range(switch_len):
         if (i+1) % num == 0:
             switch_list[i] = int(not switch_list[i])
             
-def girls(num):
+def girls(num):             # 여자
     if num == 1 or num == switch_len:
         switch_list[num-1] =  int(not switch_list[num-1])
     else:
