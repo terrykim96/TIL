@@ -6,7 +6,7 @@ nums = []
 while True:
     try:
         nums.append(int(input()))
-        
+
     except:
         break
         
@@ -16,7 +16,7 @@ def pre_order(s, e):
 
     mid = e + 1                         # 오른쪽 노드가 없을 경우
 
-    for i in range(s+1, e+1):
+    for i in range(s + 1, e + 1):
         if nums[s] < nums[i]:
             mid = i
 
