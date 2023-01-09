@@ -10,7 +10,7 @@ for _ in range(n):
 
 expected.sort()     # 정렬
 
-# ans = sum([abs(i - j) for i, j in zip(expected, list(range(1, n + 1)))])
+ans = sum([abs(i - j) for i, j in zip(expected, list(range(1, n + 1)))])
 
 result = 0
 for i in range(1, n + 1):
