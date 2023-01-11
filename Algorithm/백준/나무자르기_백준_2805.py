@@ -3,7 +3,7 @@ trees = list(map(int, input().split()))
 
 start, end = 1, max(trees)
 
-while start <= end:
+while start <= end:     # 이분탐색으로 찾아준다.
     mid = (start + end) // 2
 
     tree_len = 0

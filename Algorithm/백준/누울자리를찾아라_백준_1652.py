@@ -21,7 +21,7 @@ for i in room:  # 점과 벽을 기준으로 2자리 이상이 있다면 누울 
                 position_w += 1
             cnt_w = 0
 
-    if cnt_w > 1:
+    if cnt_w > 1:   # 가로
         position_w += 1
     
 
@@ -36,7 +36,7 @@ for i in range(N):
                 position_h += 1
             cnt_h = 0
 
-    if cnt_h > 1:
+    if cnt_h > 1:   # 세로
         position_h += 1
     
 print(position_w, position_h)
